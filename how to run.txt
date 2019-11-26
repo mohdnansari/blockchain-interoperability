@@ -1,0 +1,12 @@
+1) open baas explorer on bluemix >> open channel to view blocks for the chaincode
+2) open baas explorer on scp >> open channel to view blocks for the chaincode
+3) run bmx baas server (C:\Users\IBM_ADMIN\fabric-samples\fabcar-bmx-browser)
+4) run ui server (C:\Users\IBM_ADMIN\blockchain-interoperability-coldchain)
+5) open IE http://localhost:8080
+6) create some sample assets on both sides(postman)
+7) now test query. this will populate response box. replicate will work only after this.
+
+
+** cors - issue exist with chrome and firefox. without using proxy it wont be possible to make calls from localhost.
+
+edx2018

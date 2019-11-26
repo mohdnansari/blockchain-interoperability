@@ -284,8 +284,6 @@ td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
 <div class="col-md-2">
 
 <a onclick="queryAll()"  class="btn btn-rounded btn-info mb-5"><i class="fa mr-3 fa-sync"></i> Refresh</a>
-
-
 </div>
 
 
@@ -668,22 +666,12 @@ td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
 	}
 	
 	function populateReplAsset(tableName, index){
-	
-		var assetJson = {"asset":{"assetID":""}};
-		
 		if (tableName == "ibmtable"){
-			var obj1 = ibmQueryAllResp[index];
-			
 			document.getElementById("response1").value = JSON.stringify(ibmQueryAllResp[index]);
-			assetJson.asset.assetID = obj1.assetstate.asset.assetID;
-			document.getElementById("assetid1").value = JSON.stringify(assetJson);
 		} 
 		
 		if (tableName == "saptable"){
-			var obj2 = sapQueryAllResp[index];
 			document.getElementById("response2").value = JSON.stringify(sapQueryAllResp[index]);
-			assetJson.asset.assetID = obj2.assetstate.asset.assetID;
-			document.getElementById("assetid2").value = JSON.stringify(assetJson);
 		} 	
 	}
 	

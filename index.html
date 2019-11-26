@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="no-outlines">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- ==== Document Title ==== -->
+    <title>IBM Blockchain Talking to SAP Blockchain</title>
+    
+    <!-- ==== Document Meta ==== -->
+    <meta name="author" content="Mohammed Nihal Ansari">
+    <meta name="description" content="PoC IBM and SAP BaaS communication">
+    <meta name="keywords" content="IBM Blockchain, SAP Blockchain">
+
+    <!-- ==== Favicon ==== -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- ==== Google Font ==== -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CMontserrat:400,500">
+
+    <!-- Stylesheets -->
+   <link rel="stylesheet" href="arrow.css"> 
+ <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/morris.min.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-jvectormap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+ 
+
+    <!-- Page Level Stylesheets -->
+
+</head>
+<body>
+
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <!-- Navbar Start -->
+        <header class="navbar navbar-fixed">
+            <!-- Navbar Header Start -->
+            <div class="navbar--header">
+                <!-- Logo Start -->
+                <a href="index.html" class="logo">
+                    <img src="assets/img/logo.png" alt="">
+                </a>
+                <!-- Logo End -->
+
+                <!-- Sidebar Toggle Button Start -->
+                <a href="#" class="navbar--btn" data-toggle="sidebar" title="Toggle Sidebar">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <!-- Sidebar Toggle Button End -->
+            </div>
+            <!-- Navbar Header End -->
+
+            <!-- Sidebar Toggle Button Start -->
+            <a href="#" class="navbar--btn" data-toggle="sidebar" title="Toggle Sidebar">
+                <i class="fa fa-bars"></i>
+            </a>
+            <!-- Sidebar Toggle Button End -->
+
+ 
+            
+        </header>
+        <!-- Navbar End -->
+
+        
+        <!-- Main Container Start -->
+        <main class="main--container">
+            <!-- Page Header Start -->
+            <section class="page--header">
+			
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Page Title Start -->
+                            <h2 class="page--title h5">Enterprise Blockchain Interoperability</h2>
+                            <!-- Page Title End -->
+
+                            
+                        </div>
+
+                        <div class="col-lg-6">
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Page Header End -->
+
+            <!-- Main Content Start -->
+
+	<section class="main--content">
+
+
+	<div class="row gutter-20">
+
+
+
+<div class="col-md-4">
+	
+	<!-- Panel Start -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Transact with IBM Blockchain </h3>
+                            </div>
+
+                            <div class="panel-content">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="label-text">AssetID</span>
+                                        <input id="assetid1" type="email" name="email" placeholder="method name..." class="form-control">
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <span class="label-text">Response</span>
+                                        <div class="col-lt-10">
+                                        <textarea id="response1" name="textarea" class="form-control" placeholder='JSON...'></textarea>
+                                    </div>
+
+                                    </label>
+                                </div>
+
+                            
+                                <input type="submit" value="Query" class="btn btn-bg btn-rounded btn-success"  onclick="queryIBMbaas()">
+                                
+								
+								<input type="submit" value="Replicate " class="btn btn-bg btn-rounded btn-success"  onclick="invokeSAPbaas()">
+								
+                            </div>
+                        </div>
+                        <!-- Panel End -->
+                    </div>
+
+						<div class="col-md-4">
+	
+<div id="arrowAnim">
+  <div class="arrowSliding">
+    <div class="arrow"></div>
+  </div>
+  <div class="arrowSliding delay1">
+    <div class="arrow"></div>
+  </div>
+  
+  
+  </div>
+</div>			
+					
+					                <div class="col-md-4">
+                        <!-- Panel Start -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Transact with SAP Blockchain </h3>
+                            </div>
+
+                            <div class="panel-content">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="label-text">AssetId</span>
+                                        <input id = "assetid2" type="email" name="email" placeholder="method name..." class="form-control">
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <span class="label-text">Response</span>
+                                        <div class="col-lt-10">
+                                        <textarea id="response2" name="textarea" class="form-control" placeholder='JSON...'></textarea>
+                                    </div>
+
+                                    </label>
+                                </div>
+
+                            
+
+                                <input type="submit" value="Query" class="btn btn-bg btn-rounded btn-success"  onclick="querySAPbaas()">
+                                
+								
+								<input type="submit" value="Replicate " class="btn btn-bg btn-rounded btn-success"  onclick="invokeIBMbaas()">                                
+                            </div>
+                        </div>	
+                        <!-- Panel End -->
+                    </div>
+
+            </section>
+            <!-- Main Content End -->
+
+            <!-- Main Footer Start -->
+            <footer class="main--footer main--footer-light">
+                <p>Copyright &copy; <a href="#">IBM</a>. All Rights Reserved.</p>
+            </footer>
+            <!-- Main Footer End -->
+        </main>
+        <!-- Main Container End -->
+    
+	
+	</div>
+    <!-- Wrapper End -->
+	
+	
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/jquery.sparkline.min.js"></script>
+    <script src="assets/js/raphael.min.js"></script>
+    <script src="assets/js/morris.min.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/jquery-jvectormap.min.js"></script>
+    <script src="assets/js/jquery-jvectormap-world-mill.min.js"></script>
+    <script src="assets/js/horizontal-timeline.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery.steps.min.js"></script>
+    <script src="assets/js/dropzone.min.js"></script>
+    <script src="assets/js/ion.rangeSlider.min.js"></script>
+    <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Page Level Scripts -->
+	
+	<script>
+	
+	var ResponseFromQuery = "";
+	var assetID = "CPKGBCINTEROP02";
+	var scpToken = "bearer eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2FwaW5ub3ZhdGlvbi1zdWJhY2NvdW50LmF1dGhlbnRpY2F0aW9uLmV1MTAuaGFuYS5vbmRlbWFuZC5jb20vdG9rZW5fa2V5cyIsImtpZCI6ImtleS1pZC0xIiwidHlwIjoiSldUIn0.eyJqdGkiOiIzNzM0N2NiMWFjMWU0YmM0YWQ3MmRhNjA3Y2M4ZTBhZiIsImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJ6ZG4iOiJzYXBpbm5vdmF0aW9uLXN1YmFjY291bnQiLCJzZXJ2aWNlaW5zdGFuY2VpZCI6ImZkNWY0YzJkLTk1MWYtNDJlNC04YWY4LTcwODUxZTRkYjYxYyJ9LCJzdWIiOiJzYi1mZDVmNGMyZC05NTFmLTQyZTQtOGFmOC03MDg1MWU0ZGI2MWMhYjM0NTV8bmEtNDIwYWRmYzktZjk2ZS00MDkwLWE2NTAtMDM4Njk4OGI2N2UwIWIxODM2IiwiYXV0aG9yaXRpZXMiOlsidWFhLnJlc291cmNlIl0sInNjb3BlIjpbInVhYS5yZXNvdXJjZSJdLCJjbGllbnRfaWQiOiJzYi1mZDVmNGMyZC05NTFmLTQyZTQtOGFmOC03MDg1MWU0ZGI2MWMhYjM0NTV8bmEtNDIwYWRmYzktZjk2ZS00MDkwLWE2NTAtMDM4Njk4OGI2N2UwIWIxODM2IiwiY2lkIjoic2ItZmQ1ZjRjMmQtOTUxZi00MmU0LThhZjgtNzA4NTFlNGRiNjFjIWIzNDU1fG5hLTQyMGFkZmM5LWY5NmUtNDA5MC1hNjUwLTAzODY5ODhiNjdlMCFiMTgzNiIsImF6cCI6InNiLWZkNWY0YzJkLTk1MWYtNDJlNC04YWY4LTcwODUxZTRkYjYxYyFiMzQ1NXxuYS00MjBhZGZjOS1mOTZlLTQwOTAtYTY1MC0wMzg2OTg4YjY3ZTAhYjE4MzYiLCJncmFudF90eXBlIjoiY2xpZW50X2NyZWRlbnRpYWxzIiwicmV2X3NpZyI6ImQ3MTAzMTM5IiwiaWF0IjoxNTQwNzIyMTY4LCJleHAiOjE1NDA3NjUzNjgsImlzcyI6Imh0dHA6Ly9zYXBpbm5vdmF0aW9uLXN1YmFjY291bnQubG9jYWxob3N0OjgwODAvdWFhL29hdXRoL3Rva2VuIiwiemlkIjoiOGZiZDc2Y2EtYzExZS00MzE3LTg2ZGUtZmY5MDlhNmM0NDQ0IiwiYXVkIjpbInVhYSIsInNiLWZkNWY0YzJkLTk1MWYtNDJlNC04YWY4LTcwODUxZTRkYjYxYyFiMzQ1NXxuYS00MjBhZGZjOS1mOTZlLTQwOTAtYTY1MC0wMzg2OTg4YjY3ZTAhYjE4MzYiXX0.QwtQfu64uZ3jigNWB8k85b1-fmYSh6QlZBPjZDLP7ExRhdFjJe-79QfXS0E7cATa7yllwkfvVTq-CqmlLRX6ldYmqSVmmQ-BCa2eFCFmB0dFlHjNpE-6YATBhdTaMKv3AowUVs7-fifRvZf9gCkSuPWeGWSThGoS0ecZDIXjwgs6PXn36wMu5shgMiFr2nGh2WV-vV9GeWj8NI9GIIyTsyI7QZaVvhbsGXQMjxw9btrQ0awmU8Dd83Kz-0raLWNUgfq317OurDKCsatSkh6HoETRvj_e2YlvqpqaVyzr351eUDBzZlLDVsS04aac1K1rNc6uyL6S9vfVaq2Zkf-aQb0TiCS3Go7IbknvpwumojADqMUO7wE9-xxxwkPpynnmx61hHwIWZ_fdb8xvWln8AL7z0nO5UnPK-LWTMYdBIM-pfP6VcJVX37Kgkk8piWEJfPCWFYlEA3vKqJEak3NefVLNLzUrPe786vknUW31X8BBBiO8tAYQYoBMZqxUPPaWM0cp3QO7JOGI10tjSIR5dcLWRlSZzxJY67Kx3KfrnNZjLfidMDekbXvqhqhwDNv0HNWG_BjMhE4vZvcewjoPyc0OjpxVods1ztXlGNA9jmW33fu7cH_Uha6DA5vH0g-Uk6-hD6ENIgvG3Bdq1HlbN4lWfrXaMCsaX7lr7IS7crY";
+	
+	/* call IBM Blockchain-as-a-service */
+	function queryIBMbaas(){
+		
+	var assetID = 	document.getElementById("assetid1").value;
+		
+	var data = JSON.stringify({
+	  "chaincodeId": "coldchainv04",
+	  "fcn": "readAsset",
+	  "args": [
+	  assetID
+	  ]
+	});
+
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = false;
+
+	xhr.addEventListener("readystatechange", function () {
+	  if (this.readyState === 4) {
+		console.log(this.responseText);
+		ResponseFromQuery = ""; 
+		ResponseFromQuery = JSON.stringify(this.responseText);
+		//alert("response came: " + ResponseFromQuery)
+
+		document.getElementById("response1").value = this.responseText;
+	  }
+	});
+
+	xhr.open("POST", "http://localhost:3000/query");
+	xhr.setRequestHeader("content-type", "application/json");
+
+	xhr.send(data);
+
+	}
+
+	/* call IBM Blockchain-as-a-service */
+	function invokeIBMbaas(){
+		
+		var assetID  = document.getElementById("assetid2").value;
+		var args = JSON.parse(document.getElementById("response2").value);
+	var data = JSON.stringify({
+	  "chaincodeId": "fabcar",
+	  "fcn": "createCar",
+	  "args": [
+		assetID, args.make, args.model, args.colour, args.owner
+	  ]
+	});
+
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = false;
+
+	xhr.addEventListener("readystatechange", function () {
+	  if (this.readyState === 4) {
+		console.log(this.responseText);
+		//alert("response came: " + JSON.stringify(this.responseText))
+		document.getElementById("response1").value = this.responseText;
+		
+	  }
+	});
+
+	xhr.open("POST", "http://localhost:3000/invoke");
+	xhr.setRequestHeader("content-type", "application/json");
+
+	xhr.send(data);
+
+	}
+
+
+	/* call SAP Blockchain-as-a-service */
+	function querySAPbaas()
+	
+	{
+		var assetID = document.getElementById("assetid2").value;
+		var data = JSON.stringify({
+		  "jsonrpc": "2.0",
+		  "method": "query",
+		  "function": "queryCar",
+		  "arguments": [
+			assetID
+		  ]
+		});
+
+		var xhr = new XMLHttpRequest();
+		xhr.withCredentials = true;
+
+		xhr.addEventListener("readystatechange", function () {
+		  if (this.readyState === 4) {
+		  
+			console.log(this.responseText);
+			ResponseFromQuery ="received response"
+			//ResponseFromQuery = JSON.stringify(this.responseText);
+			document.getElementById("response2").value = this.responseText;
+		  }
+		});
+
+		xhr.open("POST", "https://hyperledger-fabric.cfapps.eu10.hana.ondemand.com/api/v1/chaincodes/537c574c-851f-41cb-86c2-8318a44077bd-dev-channel-3-fabcar/latest/query");
+		xhr.setRequestHeader("accept", "application/json");
+		xhr.setRequestHeader("content-type", "application/json");
+		xhr.setRequestHeader("authorization", scpToken);
+
+		xhr.send(data);
+	}
+	
+	/* call SAP Blockchain-as-a-service */
+	function invokeSAPbaas()
+	{
+		var assetID = 	document.getElementById("assetid1").value;
+		var args = JSON.parse(document.getElementById("response1").value);
+		var data = JSON.stringify({
+		  "jsonrpc": "2.0",
+		  "method": "invoke",
+		  "function": "createCar",
+		  "arguments": [
+			assetID, args.make, args.model, args.colour, args.owner
+		  ]
+		});
+
+		var xhr = new XMLHttpRequest();
+		xhr.withCredentials = true;
+
+		xhr.addEventListener("readystatechange", function () {
+		  if (this.readyState === 4) {
+			console.log(this.responseText);
+			document.getElementById("response2").value = this.responseText;
+			//alert("response from replicate:" + this.responseText);
+		  }
+		});
+
+		xhr.open("POST", "https://hyperledger-fabric.cfapps.eu10.hana.ondemand.com/api/v1/chaincodes/537c574c-851f-41cb-86c2-8318a44077bd-dev-channel-3-fabcar/latest/invoke");
+		xhr.setRequestHeader("accept", "application/json");
+		xhr.setRequestHeader("content-type", "application/json");
+		xhr.setRequestHeader("authorization", scpToken);
+
+		xhr.send(data);
+	}
+
+	function arrow(){
+	
+	if ( document.getElementById("arrowAnim").style.display == "none"){	
+		document.getElementById("arrowAnim").style.display = "";
+		} else {
+		document.getElementById("arrowAnim").style.display = "none";
+	}
+	}
+	 
+
+	//document.getElementById("assetid1").value  = "1";
+	//			document.getElementById("response1").value  = "2";
+		//			document.getElementById("response2").value  = "3" ;
+			//		document.getElementById("assetid2").value = "4";
+	
+	
+	</script>
+
+</body>
+</html>

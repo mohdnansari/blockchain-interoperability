@@ -6,11 +6,10 @@
   "scripts": {
     "test": "npm test"
   },
-  "author": "nihal",
+  "author": "vijex",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
     "touch": "^3.1.0"
-	
   }
 }

@@ -80,12 +80,6 @@ img {
 	display: none;
 }
 
-td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
-
-.selected {
-    background-color: grey;
-    color: #FFF;
-}
 
 </style>
 
@@ -134,7 +128,7 @@ td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- Page Title Start -->
-                            <h2 class="page--title h5">Enterprise Blockchain Interoperability - Coldchain Asset Demo</h2>
+                            <h2 class="page--title h5">Enterprise Blockchain Interoperability</h2>
                             <!-- Page Title End -->
 
                             
@@ -157,7 +151,7 @@ td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
 
 
 
-<div class="col-md-5">
+<div class="col-md-4">
 	
 	<!-- Panel Start -->
                         <div class="panel">
@@ -189,15 +183,12 @@ td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
 								
 								<input type="submit" value="Replicate " class="btn btn-bg btn-rounded btn-success"  onclick="invokeSAPbaas()">
 								
-								<input type="submit" value="Clear" class="btn btn-bg btn-rounded btn-warning"  onclick="clear1()">
-								
-								
                             </div>
                         </div>
                         <!-- Panel End -->
                     </div>
 
-						<div class="col-md-2">
+						<div class="col-md-4">
 	
 <div id="arrowAnim">
   <div class="arrowSliding">
@@ -216,7 +207,7 @@ td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
 
   </div>			
 					
-					                <div class="col-md-5">
+					                <div class="col-md-4">
                         <!-- Panel Start -->
                         <div class="panel">
                             <div class="panel-heading">
@@ -247,81 +238,19 @@ td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
                                 
 								
 								<input type="submit" value="Replicate " class="btn btn-bg btn-rounded btn-success"  onclick="invokeIBMbaas()">                                
-                            
-							<input type="submit" value="Clear" class="btn btn-bg btn-rounded btn-warning"  onclick="clear2()">
-								
-							</div>
+                            </div>
                         </div>	
                         <!-- Panel End -->
                     </div>
-					
-<div class="col-md-5">
- <div class="panel">
-	<table id ="ibmtable" class="table">
-		<thead>
-		<tr><h3>Assets on IBM Blockchain</h3></tr>
-		<tr>
-		  <th scope="col">#</th>
-		  <th scope="col">AssetID</th>
-		  <th scope="col">Temperature</th>
-		  <th scope="col">Timestamp</th>
-		</tr>
-		</thead>
-
-		<tbody>
-			<tr>
-				  <td></td>
-				  <td></td>
-				  <td></td>
-				  <td></td>
-			</tr>
-
-		</tbody>
-	</table>
-</div>
-</div>
-
-<div class="col-md-2">
-
-<a onclick="queryAll()"  class="btn btn-rounded btn-info mb-5"><i class="fa mr-3 fa-sync"></i> Refresh</a>
-
-
-</div>
-
-
-<div class="col-md-5">
- <div class="panel">
-	<table id ="saptable" class="table">
-
-		<thead>
-		<tr><h3>Assets on SAP Blockchain</h3>
-		</tr>
-		<tr>
-		  <th scope="col">#</th>
-		  <th scope="col">AssetID</th>
-		  <th scope="col">Temperature</th>
-		  <th scope="col">Timestamp</th>
-		</tr>
-		</thead>
-		<tbody>
-			<tr>
-				  <td></td>
-				  <td></td>
-				  <td></td>
-				  <td></td>
-			</tr>
-		
-		</tbody>
-	</table>
-
-</div>
-</div>
 
             </section>
-			
             <!-- Main Content End -->
 
-            
+            <!-- Main Footer Start -->
+            <footer class="main--footer main--footer-light">
+                <p>Copyright &copy; <a href="#">IBM</a>. All Rights Reserved.</p>
+            </footer>
+            <!-- Main Footer End -->
         </main>
         <!-- Main Container End -->
     
@@ -356,10 +285,8 @@ td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
 	
 	var ResponseFromQuery = "";
 	var assetID = "CPKGBCINTEROP02";
-	var scpToken = "bearer eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2FwaW5ub3ZhdGlvbi1zdWJhY2NvdW50LmF1dGhlbnRpY2F0aW9uLmV1MTAuaGFuYS5vbmRlbWFuZC5jb20vdG9rZW5fa2V5cyIsImtpZCI6ImtleS1pZC0xIiwidHlwIjoiSldUIn0.eyJqdGkiOiJjODY5YjdlMTdhYWY0M2FkOWY2ODhhNjQyNTM2OWQwMSIsImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJ6ZG4iOiJzYXBpbm5vdmF0aW9uLXN1YmFjY291bnQiLCJzZXJ2aWNlaW5zdGFuY2VpZCI6ImZkNWY0YzJkLTk1MWYtNDJlNC04YWY4LTcwODUxZTRkYjYxYyJ9LCJzdWIiOiJzYi1mZDVmNGMyZC05NTFmLTQyZTQtOGFmOC03MDg1MWU0ZGI2MWMhYjM0NTV8bmEtNDIwYWRmYzktZjk2ZS00MDkwLWE2NTAtMDM4Njk4OGI2N2UwIWIxODM2IiwiYXV0aG9yaXRpZXMiOlsidWFhLnJlc291cmNlIl0sInNjb3BlIjpbInVhYS5yZXNvdXJjZSJdLCJjbGllbnRfaWQiOiJzYi1mZDVmNGMyZC05NTFmLTQyZTQtOGFmOC03MDg1MWU0ZGI2MWMhYjM0NTV8bmEtNDIwYWRmYzktZjk2ZS00MDkwLWE2NTAtMDM4Njk4OGI2N2UwIWIxODM2IiwiY2lkIjoic2ItZmQ1ZjRjMmQtOTUxZi00MmU0LThhZjgtNzA4NTFlNGRiNjFjIWIzNDU1fG5hLTQyMGFkZmM5LWY5NmUtNDA5MC1hNjUwLTAzODY5ODhiNjdlMCFiMTgzNiIsImF6cCI6InNiLWZkNWY0YzJkLTk1MWYtNDJlNC04YWY4LTcwODUxZTRkYjYxYyFiMzQ1NXxuYS00MjBhZGZjOS1mOTZlLTQwOTAtYTY1MC0wMzg2OTg4YjY3ZTAhYjE4MzYiLCJncmFudF90eXBlIjoiY2xpZW50X2NyZWRlbnRpYWxzIiwicmV2X3NpZyI6ImQ3MTAzMTM5IiwiaWF0IjoxNTQwOTc1NzIwLCJleHAiOjE1NDEwMTg5MjAsImlzcyI6Imh0dHA6Ly9zYXBpbm5vdmF0aW9uLXN1YmFjY291bnQubG9jYWxob3N0OjgwODAvdWFhL29hdXRoL3Rva2VuIiwiemlkIjoiOGZiZDc2Y2EtYzExZS00MzE3LTg2ZGUtZmY5MDlhNmM0NDQ0IiwiYXVkIjpbInVhYSIsInNiLWZkNWY0YzJkLTk1MWYtNDJlNC04YWY4LTcwODUxZTRkYjYxYyFiMzQ1NXxuYS00MjBhZGZjOS1mOTZlLTQwOTAtYTY1MC0wMzg2OTg4YjY3ZTAhYjE4MzYiXX0.wB-zFQb6BOol4J2EuAeIE4sAOXyElGU-c66Z3aawob6ONaG6F6NZ-h2aib49Abxm0g3eaTjn7KPUIFbcPf5nI-W0pINWeHPtL5eVKVq9D_T2OXCsKH04F20BG6pA6w-uAeTb243urDKnY16Ica7cKRMg0l_BaAo9IN-eHsHtpU7nQLawGQ1-W62u_9cVif6seuk7m8lDOmvIGTVYiTYuw5kxL72bCbitU-x-Y51xXyv8G1pXgsFjDTUOAsAOsGWuAT7l_QGf5FAuzvbSl5Wcedi48jf_abGmU4ceH7IvJuj_Sm9Yu65b8OmaP2WOIitjpdZvfXaQrvDhiOkZqoKeAGnd-8Y-BBg63MxQYLvxVUXEpZZIdCjxfmnxexCuElCjBPNXmst7O9bO195rGC1ohLAlyLiwdSfFSRIJWlc9FwmoX9S93ytOYDa6IgNEO4UIVWptA4Z_wySnE9Zey9L1oi_fgqDrJm_Hp5iPMcP0I2eLtBoktXjpGefORZuyjJBTcfNgRf5jRWapUbYH7lyuqd1FOCGixNypSberFSUuqMI1nZHP0NUaGy1IFMYknlQKIBE77wVXMu5poU9RMsnNU8yowxCUf9q65woYdIqcAsDP1fM-fpaaBf1cyyMZtGxnKW-5NzkBuut45o95gVcNwAXkeNSjSWQbk3Sac-_HUGk";
+	var scpToken = "bearer eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2FwaW5ub3ZhdGlvbi1zdWJhY2NvdW50LmF1dGhlbnRpY2F0aW9uLmV1MTAuaGFuYS5vbmRlbWFuZC5jb20vdG9rZW5fa2V5cyIsImtpZCI6ImtleS1pZC0xIiwidHlwIjoiSldUIn0.eyJqdGkiOiI1MTEwNzZjYTBmOTk0MzcwYTM1ZTJlZDAzMDkwNWQ3YSIsImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJ6ZG4iOiJzYXBpbm5vdmF0aW9uLXN1YmFjY291bnQiLCJzZXJ2aWNlaW5zdGFuY2VpZCI6ImZkNWY0YzJkLTk1MWYtNDJlNC04YWY4LTcwODUxZTRkYjYxYyJ9LCJzdWIiOiJzYi1mZDVmNGMyZC05NTFmLTQyZTQtOGFmOC03MDg1MWU0ZGI2MWMhYjM0NTV8bmEtNDIwYWRmYzktZjk2ZS00MDkwLWE2NTAtMDM4Njk4OGI2N2UwIWIxODM2IiwiYXV0aG9yaXRpZXMiOlsidWFhLnJlc291cmNlIl0sInNjb3BlIjpbInVhYS5yZXNvdXJjZSJdLCJjbGllbnRfaWQiOiJzYi1mZDVmNGMyZC05NTFmLTQyZTQtOGFmOC03MDg1MWU0ZGI2MWMhYjM0NTV8bmEtNDIwYWRmYzktZjk2ZS00MDkwLWE2NTAtMDM4Njk4OGI2N2UwIWIxODM2IiwiY2lkIjoic2ItZmQ1ZjRjMmQtOTUxZi00MmU0LThhZjgtNzA4NTFlNGRiNjFjIWIzNDU1fG5hLTQyMGFkZmM5LWY5NmUtNDA5MC1hNjUwLTAzODY5ODhiNjdlMCFiMTgzNiIsImF6cCI6InNiLWZkNWY0YzJkLTk1MWYtNDJlNC04YWY4LTcwODUxZTRkYjYxYyFiMzQ1NXxuYS00MjBhZGZjOS1mOTZlLTQwOTAtYTY1MC0wMzg2OTg4YjY3ZTAhYjE4MzYiLCJncmFudF90eXBlIjoiY2xpZW50X2NyZWRlbnRpYWxzIiwicmV2X3NpZyI6ImQ3MTAzMTM5IiwiaWF0IjoxNTQwNzk0MzQzLCJleHAiOjE1NDA4Mzc1NDMsImlzcyI6Imh0dHA6Ly9zYXBpbm5vdmF0aW9uLXN1YmFjY291bnQubG9jYWxob3N0OjgwODAvdWFhL29hdXRoL3Rva2VuIiwiemlkIjoiOGZiZDc2Y2EtYzExZS00MzE3LTg2ZGUtZmY5MDlhNmM0NDQ0IiwiYXVkIjpbInVhYSIsInNiLWZkNWY0YzJkLTk1MWYtNDJlNC04YWY4LTcwODUxZTRkYjYxYyFiMzQ1NXxuYS00MjBhZGZjOS1mOTZlLTQwOTAtYTY1MC0wMzg2OTg4YjY3ZTAhYjE4MzYiXX0.oL2lHhdfkweu-BsPEwODLuhkTlEsyJuKqKVlq9QXM9z4GOLXJ6NIHWtC8ASinKGtXdHxlhRd9yUiSbeED2Tor8WkCR_EhQXq5WQsIwpChDbmXs2jDuXmp13wuW2zPIEWGGQeDkQW2I0pgnw1qlpItjF8rF9Kvv2y5Cuhdm0v7IGpqANlnVkVFyXYLx3M2v7Ku3SrjKbhjV9vq1k0954aRWtDyetDQQDpW4twKRrFB6kqWe0tJAKslGVcuzoc501dRRYpjU-5yJc42FpXPp6J-ngZI6FBlbBWsStM11hZPVZDr6uXFvsDK2q0rDEOM6KCfDDZczK13582cotA5OusslzUvIINFyyJh3epRC9TBHTdS5xHLxOC4v2QFTseBYG-wIrxANBSKF7VLIJnVAALhE9Cjs2eYg4QFgR5qYd1CMPgNjChv8YAtiFc5rSP-hE7Mp1NweR3VGAdY9p_GaGVLIKeH8WnpRRhB_WaL1MZySChtWqc6Is4keCs-8reIOIYUA4eXlyKMW48g3EAlpj0fznO6hErUqOSoZuD3wd6krQrqWpJi1t951Jp6TQRiZjoU11XbZHii_Sw-DjEstVTYOIQ1xgpeacZb4aA8sqAI7I494vMwmtsTKULg_X20Wb82Ml_fz6osxTYytBrRg4WQtoRFij0NAwVCxynFpctMjM";
 	
-	var ibmQueryAllResp, sapQueryAllResp;	
-
 	/* call IBM Blockchain-as-a-service */
 	function queryIBMbaas(){
 		
@@ -495,8 +422,6 @@ td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
 		  if (this.readyState === 4) {
 			console.log(this.responseText);
 			document.getElementById("response2").value = this.responseText;
-			
-			
 			//alert("response from replicate:" + this.responseText);
 		  }
 		});
@@ -519,213 +444,6 @@ td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
 	}
 	 
 
-
-	 function queryAll()
-	 {
-		queryAllSAPbaas();
-		queryAllIBMbaas();
-		
-	 }
-	 
-	/* call SAP Blockchain-as-a-service */
-	function queryAllSAPbaas()
-	
-	{
-		var assetID = document.getElementById("assetid2").value;
-		var data = JSON.stringify({
-		  "jsonrpc": "2.0",
-		  "method": "query",
-		  "function": "readAllAssets",
-		  "arguments": [
-			
-		  ]
-		});
-
-		var xhr = new XMLHttpRequest();
-		xhr.withCredentials = true;
-
-		xhr.addEventListener("readystatechange", function () {
-		  if (this.readyState === 4) {
-			console.log(this.responseText);
-			ResponseFromQuery =""
-			//alert("got response from scp");
-			//ResponseFromQuery = JSON.stringify(this.responseText);
-			refreshTables(this.responseText,"saptable");
-		//just for display. can be deleted later.
-		//var args = JSON.parse(document.getElementById("response2").value);
-		//var assetArg = JSON.stringify(args.assetstate);
-		//window.alert(assetArg);
-
-		  }
-		});
-
-		xhr.open("POST", "https://hyperledger-fabric.cfapps.eu10.hana.ondemand.com/api/v1/chaincodes/537c574c-851f-41cb-86c2-8318a44077bd-dev-channel-3-coldchain-test/latest/query");
-		xhr.setRequestHeader("accept", "application/json");
-		xhr.setRequestHeader("content-type", "application/json");
-		xhr.setRequestHeader("authorization", scpToken);
-
-		xhr.send(data);
-	}
-	
-		
-		/* call IBM Blockchain-as-a-service */
-	function queryAllIBMbaas(){
-		
-	var assetID = 	document.getElementById("assetid1").value;
-		
-	var data = JSON.stringify({
-	  "chaincodeId": "coldchainv04",
-	  "fcn": "readAllAssets",
-	  "args": [
-	  
-	  ]
-	});
-
-	var xhr = new XMLHttpRequest();
-	xhr.withCredentials = false;
-
-	xhr.addEventListener("readystatechange", function () {
-	  if (this.readyState === 4) {
-		console.log(this.responseText);
-		ResponseFromQuery = ""; 
-		ResponseFromQuery = JSON.stringify(this.responseText);
-		//alert("response came: " + ResponseFromQuery)
-		//document.getElementById("response1").value = this.responseText;
-		refreshTables(this.responseText,"ibmtable");
-	  }
-	});
-
-	xhr.open("POST", "http://localhost:3000/query");
-	xhr.setRequestHeader("content-type", "application/json");
-
-	xhr.send(data);
-
-	}
-
-	
-	function refreshTables(respTemp,tableName)
-	{
-	
-		var resp2 = JSON.parse(respTemp);
-		resp = resp2.sort(sortByProperty("txnts"));
-		
-		if (tableName == "ibmtable"){
-			ibmQueryAllResp = resp;
-		} 
-		
-		if (tableName == "saptable"){
-			sapQueryAllResp = resp;
-		} 
-		
-		//alert("in refreshTables:" + JSON.stringify(resp));
-		//alert("in refreshTables:" + resp.length );
-		//document.getElementById("response2").value = respTemp;
-		
-		for (var i=2,j=0;j<resp.length;i++, j++) 
-		{   
-			var tableLen = document.getElementById(tableName).rows.length; 
-			
-			if (tableLen-2 <= resp.length) {
-			newRow(tableName); 
-			}
-			document.getElementById(tableName).rows[i].cells[0].innerHTML  = j;
-			document.getElementById(tableName).rows[i].cells[1].innerHTML  = resp[j].assetstate.asset.assetID;
-			document.getElementById(tableName).rows[i].cells[2].innerHTML =  resp[j].assetstate.asset.temperature;;
-			document.getElementById(tableName).rows[i].cells[3].innerHTML =  resp[j].txnts;
-		}
-		
-	//$("#saptable tr").click(function() {
-    //alert($(this).children("td").html());
-	//});
-
-	$("#saptable tr").click(function(){
-	$(this).addClass('selected').siblings().removeClass('selected');    
-	var value=$(this).find('td:first').html();
-	//alert(value);    
-	if (tableName == "saptable") {
-	populateReplAsset(tableName,value); }
-	});
-
-	/*$('.ok').on('click', function(e){
-    alert($("#saptable tr.selected td:first").html());
-	});*/
-		
-	$("#ibmtable tr").click(function(){
-
-	$(this).addClass('selected').siblings().removeClass('selected');    
-	var value=$(this).find('td:first').html();
-	//alert(value); 
-	if (tableName == "ibmtable") {
-	populateReplAsset(tableName,value); } 
-	});
-
-	/*$('.ok').on('click', function(e){
-    alert($("#ibmtable tr.selected td:first").html());
-	});*/
-	
-
-	
-	}
-	
-	function populateReplAsset(tableName, index){
-	
-		var assetJson = {"asset":{"assetID":""}};
-		
-		if (tableName == "ibmtable"){
-			var obj1 = ibmQueryAllResp[index];
-			
-			document.getElementById("response1").value = JSON.stringify(ibmQueryAllResp[index]);
-			assetJson.asset.assetID = obj1.assetstate.asset.assetID;
-			document.getElementById("assetid1").value = JSON.stringify(assetJson);
-		} 
-		
-		if (tableName == "saptable"){
-			var obj2 = sapQueryAllResp[index];
-			document.getElementById("response2").value = JSON.stringify(sapQueryAllResp[index]);
-			assetJson.asset.assetID = obj2.assetstate.asset.assetID;
-			document.getElementById("assetid2").value = JSON.stringify(assetJson);
-		} 	
-	}
-	
-	function newRow(tableName){
-	
-			var table = document.getElementById(tableName);
-			var count = document.getElementById(tableName).rows.length;
-	        var row = table.insertRow(count);
-			var cell1 = row.insertCell(0);
-			var cell2 = row.insertCell(1);
-			var cell1 = row.insertCell(2);
-			var cell2 = row.insertCell(3);
-			
-	}
-	
-	var sortByProperty = function (property) {
-
-    return function (x, y) {
-        return ((x[property] === y[property]) ? 0 : ((x[property] < y[property]) ? 1 : -1));
-    };
-	};
-
-
-	function dispAlert(){
-		alert("hello");
-	}
-	
-	function clear1(){
-	
-		document.getElementById("assetid1").value = "";
-		document.getElementById("response1").value = "";
-		
-	}
-	
-
-	function clear2(){
-	
-		document.getElementById("assetid2").value = "";
-		document.getElementById("response2").value = "";
-		
-	}
-	
 	//document.getElementById("assetid1").value  = "1";
 	//			document.getElementById("response1").value  = "2";
 		//			document.getElementById("response2").value  = "3" ;

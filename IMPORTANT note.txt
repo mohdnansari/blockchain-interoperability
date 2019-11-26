@@ -1,0 +1,30 @@
+1) when you bring up the node server, html/index.html is served. hence the token needs to be updated there for the query to run
+2) CORS will make only IE run these requests. Firefox and chrome are blocking the requests.
+3) for the bluemix side api calls to run, a separate server (fabcar browser version) needs to be run (port=3000). the requests will be routed through this. 
+
+
+
+*************** working services
+
+** server fetching data from bluemix blockchain service
+C:\Users\IBM_ADMIN\fabric-samples\fabcar-bmx-browser
+
+** interoperability page front end 
+C:\Users\IBM_ADMIN\express-html-interop
+
+** 
+Blockchain-hello2 is the bluemix service where coldchain has been deployed
+
+one example asset on this baas instance is: CPKG20180918U01
+
+{"asset":{"assetID":"CPKG20181028U01"}}
+
+
+CPKG20181028U01
+
+
+
+## troubleshooting:
+
+1) if sap baas doesnt create/read asset - we may have to update oauth token in index.html
+2) if ibm baas doesnt react, see the server console window for any errors 

@@ -6442,6 +6442,7 @@ li.list-group-item:first-child {
     overflow-x: hidden;
     overflow-y: hidden;
     z-index: 99;
+
 }
 
 .sidebar-light .sidebar {

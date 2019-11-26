@@ -1,0 +1,54 @@
+
+#arrowAnim {
+  width: 0vw;
+  height: 0vh;
+  display: flex;
+  justify-content:  left;
+  align-items: left;
+  vertical-align: bottom;
+  padding: 100px;
+  display : none;  
+ 
+}
+
+.arrow {
+  width: 4vw;
+  height: 4vw;
+  border: 2.5vw solid;
+  border-color: RoyalBlue transparent transparent RoyalBlue;
+  transform: rotate(135deg);
+  
+}
+
+
+.arrowSliding {
+  position: absolute;
+  -webkit-animation: slide 2s linear infinite; 
+          animation: slide 2s linear infinite;
+}
+
+.delay1 {
+  -webkit-animation-delay: 1s; 
+    animation-delay: 1s;
+}
+.delay2 {
+  -webkit-animation-delay: 2s; 
+    animation-delay: 2s;
+}
+.delay3 {
+  -webkit-animation-delay: 3s; 
+    animation-delay: 3s;
+}
+
+@-webkit-keyframes slide {
+    0% { opacity:0; transform: translateX(-15vw); }	
+   20% { opacity:1; transform: translateX(-9vw); }	
+   80% { opacity:1; transform: translateX(9vw); }	
+  100% { opacity:0; transform: translateX(15vw); }	
+}
+@keyframes slide {
+    0% { opacity:0; transform: translateX(-15vw); }	
+   20% { opacity:1; transform: translateX(-9vw); }	
+   80% { opacity:1; transform: translateX(9vw); }	
+  100% { opacity:0; transform: translateX(15vw); }	
+}

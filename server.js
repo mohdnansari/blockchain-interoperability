@@ -14,7 +14,7 @@ app.use("/image", express.static(__dirname + '/assets/img'));
 
 
 app.get('/', function(request, response) {
-    response.sendfile('./html/index.html');
+    response.sendFile('./index.html');
 });
 
 var port = process.env.PORT || 8080;
